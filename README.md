@@ -21,5 +21,5 @@
 
 # ✏️Autores
 
-| [<img src="https://avatars.githubusercontent.com/u/72164903?s" width=115><br><sub>Luis Felipe Hilário Carmona</sub>](https://github.com/Luis-Moon) | [<img src="https://avatars.githubusercontent.com/u/134703741?v=4" width=115><br><sub>Pedro</sub>](https://github.com/PhmMartos) | [<img src="https://avatars.githubusercontent.com/u/136408173?v=4" width=115><br><sub>Felipe Avila</sub>](https://github.com/avilafelipe20) | [<img src="https://avatars.githubusercontent.com/u/49076602?v=4" width=115><br><sub>Felipe Avila</sub>](https://github.com/thamipontes) |
+| [<img src="https://avatars.githubusercontent.com/u/72164903?s" width=115><br><sub>Luis Felipe Hilário Carmona</sub>](https://github.com/Luis-Moon) | [<img src="https://avatars.githubusercontent.com/u/134703741?v=4" width=115><br><sub>Pedro</sub>](https://github.com/PhmMartos) | [<img src="https://avatars.githubusercontent.com/u/136408173?v=4" width=115><br><sub>Felipe Avila</sub>](https://github.com/avilafelipe20) | [<img src="https://avatars.githubusercontent.com/u/49076602?v=4" width=115><br><sub>Thamires Pontes</sub>](https://github.com/thamipontes) |
 | :---: | :---: |  :---: | :---: |
