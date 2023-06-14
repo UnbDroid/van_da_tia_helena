@@ -1,9 +1,9 @@
 #!/usr/bin/env pybricks-micropython
-from modules import *
+from modules.colors import *
+from modules.motors import *
 
 while True:
-    print(cores.isBlueLeft())
-
-
-
-
+    moveFoward(100)
+    if isBlueRight():
+        moveStop()
+        break
