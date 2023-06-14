@@ -3,7 +3,7 @@ from pybricks.parameters import Port
 from pybricks.robotics import DriveBase
 from modules.motors import *
 from modules.colors import *
-from modules.Ultrasonic import *
+
 
 def beggin_choosing():
     moveFoward(40)
@@ -12,5 +12,5 @@ def beggin_choosing():
             #fazer função de fechar a garra
             pass
     stop()
-    
+
 
