@@ -7,4 +7,8 @@ sonic = UltrasonicSensor(Port.S1)
 def distance():
     return sonic.distance()
 
-
+def near_object():
+    if distance() <= 110:
+        return True
+    else:
+        return False
