@@ -1,6 +1,5 @@
 # VAN-DA-TIA-HELENA
 ![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge)
-Competição interna Droid
 
 # 📖 BONS MODOS NO DESENVOLVIMENTO
 - Commits devem ter comentario dizendo quais foram as mudanças
