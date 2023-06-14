@@ -1,6 +1,5 @@
 # VAN-DA-TIA-HELENA
 ![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge)
-Competição interna Droid
 
 # 📖 BONS MODOS NO DESENVOLVIMENTO
 - Commits devem ter comentario dizendo quais foram as mudanças
@@ -20,7 +19,7 @@ Competição interna Droid
 - [VIDEO Simulação Online Lego](https://www.youtube.com/watch?v=uZTqKmDj-9c&ab_channel=TeorianaPráticacomPedro)
 
 
-# ✏️Autores(vamos mudar isso depois kakkakakka
+# ✏️Autores
 
 | [<img src="https://avatars.githubusercontent.com/u/72164903?s" width=115><br><sub>Luis Felipe Hilário Carmona</sub>](https://github.com/Luis-Moon) | [<img src="https://avatars.githubusercontent.com/u/134703741?v=4" width=115><br><sub>Pedro</sub>](https://github.com/PhmMartos) | [<img src="https://avatars.githubusercontent.com/u/136408173?v=4" width=115><br><sub>Felipe Avila</sub>](https://github.com/avilafelipe20) | [<img src="https://avatars.githubusercontent.com/u/49076602?v=4" width=115><br><sub>Felipe Avila</sub>](https://github.com/thamipontes) |
 | :---: | :---: |  :---: | :---: |
