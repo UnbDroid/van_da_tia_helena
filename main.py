@@ -1,9 +1,13 @@
 #!/usr/bin/env pybricks-micropython
-from modules.colors import *
-from modules.motors import *
+from modules.movimentation import *
 
 while True:
-    moveFoward(100)
-    if isBlueRight():
-        moveStop()
-        break
+    # followLine()
+    start()
+    findFirstTube()
+    # print(isRed())
+    # print('Direita', isRedRight())
+    # print('Esquerda', isRedLeft())
+    # print(isBlue())
+    # printColorRight()
+    # printColorLeft()
