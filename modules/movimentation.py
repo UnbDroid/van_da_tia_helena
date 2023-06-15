@@ -26,8 +26,8 @@ def start():
         stop()
         wait(1000)
         moveLeft(140)
-        moveDistanceFoward(1000) # Arrumar essa distância
-        moveLeft(140) # Calibrar esse valor
+        moveDistanceFoward(1000) 
+        moveLeft(140) 
         count["School"] += 1
 
 def firstPassInMovie():
@@ -44,7 +44,7 @@ def firstPassInTubeArea():
         moveRight(100)
         count["Tube"] += 1 
 
-def AjustBlueLine():
+def ajustBlueLine():
     if(isBlue()):
         stop()
         wait(5000)
@@ -52,6 +52,6 @@ def AjustBlueLine():
 def findFirstTube():
     firstPassInMovie()
     firstPassInTubeArea()
-    AjustBlueLine()
+    ajustBlueLine()
         
     
