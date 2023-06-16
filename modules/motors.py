@@ -31,7 +31,16 @@ def moveDistanceFoward(distance):
 def moveDistanceBack(distance):
     motors.straight(-distance)
 
-def turnAngle(angle):
+def moveLeftTime(time):
+    motors.drive_time(0, 80, time)
+
+def moveRightTime(time):
+    motors.drive_time(0, -80, time)
+
+def moveLeft(angle):
+    motors.turn(-angle)
+
+def moveRight(angle):
     motors.turn(angle)
 
 def stop():
