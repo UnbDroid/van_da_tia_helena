@@ -15,8 +15,6 @@ def getSensorColorRight():
 def getSensorColorLeft():
     return sensorColorLeft.rgb()
 
-<<<<<<< HEAD
-=======
 
 # WHITE
 # ---------------------------------------------------------------------------------------------------------------------
@@ -167,24 +165,9 @@ def isBlue():
 
 # ---------------------------------------------------------------------------------------------------------------------
 
->>>>>>> felipe
 def printColorRight():
     return print('Direita: ', getSensorColorRight())
 
 
 def printColorLeft():
-<<<<<<< HEAD
-    return print(getSensorColorLeft())
-
-#-------------------------------------------------------------------------------
-#Passado pela linha
-
-
-def through_line():
-    if sensorColorLeft.reflection() < 10:
-        return True
-    else:
-        return False
-=======
     return print('Esquerda ', getSensorColorLeft())
->>>>>>> felipe

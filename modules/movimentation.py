@@ -1,5 +1,6 @@
 from modules.colors import *
 from modules.motors import *
+from modules.Ultrasonic import *
 from pybricks.tools import wait, StopWatch
 
 count = {}
@@ -9,6 +10,23 @@ count["Lanchonete"] = 0
 count["Tube"] = 0
 
 inicio = True
+
+
+def beggin_choosing():
+    print("begginado")
+    moveDistanceBack(100)
+    while not isBlackRight():
+        if near_object():
+            stop()
+            wait(1000)
+    stop()
+    grab_next()
+
+def grab_next():
+    moveDistanceFoward(500)  # averiguar como escolher distancia
+    moveLeft(90)
+    moveDistanceFoward(100)  # calibrar depois
+    fechar()
 
 def followLine():
     if(isBlackRight()):
@@ -20,19 +38,20 @@ def followLine():
 
 def start():
     # leftGreen()
+    print("deu start")
     followLine()
     if(isRed()):
         stop()
         wait(1000)
         moveDistanceFoward(70) 
-        moveLeft(100)
-        moveDistanceFoward(40) 
+        moveLeft(90)
+        moveDistanceFoward(70) 
         count["School"] += 1
 
 def firstPassInMovie():
     if(isRedRight() and count["School"] == 1 and count["Movie"] == 0):
         stop()
-        wait(000)
+        print("passa_pelo movie")
         moveDistanceFoward(120)
         count["Movie"] += 1   
 
@@ -40,6 +59,7 @@ def firstPassInTubeArea():
     if(isRedRight() and count["Movie"] == 1 and count["Tube"] == 0):
         stop()
         wait(2000)
+        print("passa_pelo tubo")
         moveDistanceFoward(60)
         moveRight(100)
         moveDistanceFoward(40)
@@ -48,25 +68,18 @@ def firstPassInTubeArea():
 def ajustBlueLine():
     if(isBlue()):
         stop()
-        wait(1000)
-        moveDistanceBack(15)
+        print("ajustou")
+        moveDistanceBack(25)
         moveRight(100)
+        beggin_choosing()
 
 def findFirstTube():
+    print("fidando first tube")
     firstPassInMovie()
     firstPassInTubeArea()
     ajustBlueLine()
 
-def leftGreen():
-    if(getInicio() == True):
-        moveDistanceFoward(100)
-        setInicio(False)
+
+
         
 
-def setInicio(value):
-    global inicio
-    inicio = value  
-
-def getInicio():
-    global inicio
-    return inicio
