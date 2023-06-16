@@ -19,9 +19,9 @@ def getSensorColorLeft():
 # WHITE
 # ---------------------------------------------------------------------------------------------------------------------
 
-whiteRangeLeftR = [33, 34, 35, 36, 37]
-whiteRangeLeftG = [30 ,31, 32, 33, 34]
-whiteRangeLeftB = [92 ,93, 94, 95, 96]
+whiteRangeLeftR = [31, 32, 33, 34, 35, 36, 37]
+whiteRangeLeftG = [28, 29, 30 ,31, 32, 33, 34, 35, 36]
+whiteRangeLeftB = [90, 89 ,88, 87, 86, 85, 84]
 
 
 def isWhiteLeft():
@@ -34,8 +34,8 @@ def isWhiteLeft():
     return isWhiteRangeR and isWhiteRangeG and isWhiteRangeB
 
 
-whiteRangeRightMin = [20, 23, 25]
-whiteRangeRightMax = [25, 30, 30]
+whiteRangeRightMin = [35, 30, 95]
+whiteRangeRightMax = [45, 40, 105]
 
 def isWhiteRight():
     valueSensorColorRight = getSensorColorRight()
@@ -53,9 +53,9 @@ def isWhite():
 # BLACK
 # ---------------------------------------------------------------------------------------------------------------
 
-blackRangeLeftR = [3, 4, 5, 6, 7]
-blackRangeLeftG = [3, 4, 5, 6, 7]
-blackRangeLeftB = [11 ,12, 13, 14, 15]
+blackRangeLeftR = [0, 1, 2, 3, 4 ,5, 6, 7, 8, 9, 10, 11, 12, 13]
+blackRangeLeftG = [0, 1, 2, 3, 4 ,5, 6, 7, 8, 9, 10, 11, 12, 13]
+blackRangeLeftB = [0, 1, 2, 3, 4 ,5, 6, 7, 8, 9, 10, 11, 12, 13]
 
 
 def isBlackLeft():
@@ -68,8 +68,8 @@ def isBlackLeft():
     return isBlackRangeR and isBlackRangeG and isBlackRangeB
 
 
-blackRangeRightMin = [2, 2, 0]
-blackRangeRightMax = [5, 5, 10]
+blackRangeRightMin = [1, 2, 3]
+blackRangeRightMax = [12, 20, 12]
 
 def isBlackRight():
     valueSensorColorRight = getSensorColorRight()
@@ -87,9 +87,13 @@ def isBlack():
 # RED
 # ---------------------------------------------------------------------------------------------------------------
 
-redRangeRightR = [18, 19, 20, 21, 22, 23, 24, 25, 26, 27]
+# redRangeRightR = [18, 19, 20, 21, 22, 23, 24, 25, 26, 27]
+# redRangeRightG = [1, 2, 3, 4, 5, 6, 7]
+# redRangeRightB = [0, 1, 2, 3, 4]
+
+redRangeRightR = [30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40]
 redRangeRightG = [1, 2, 3, 4, 5, 6, 7]
-redRangeRightB = [0, 1, 2, 3, 4]
+redRangeRightB = [7, 8, 9, 10, 11, 12, 13, 14]
 
 
 def isRedRight():
@@ -107,7 +111,7 @@ def isRedRight():
 
 
 
-redRangeLefttMin = [25, 1, 5]
+redRangeLefttMin = [25, 1, 2]
 redRangeLeftMax = [40, 10, 12]
 
 def isRedLeft():
@@ -116,6 +120,10 @@ def isRedLeft():
     isRedRangeR = redRangeLefttMin[0] <= valueSensorColorLeft[0] <= redRangeLeftMax[0]
     isRedRangeG = redRangeLefttMin[1] <= valueSensorColorLeft[1] <= redRangeLeftMax[1]
     isRedRangeB = redRangeLefttMin[2] <= valueSensorColorLeft[2] <= redRangeLeftMax[2]
+
+    # print('R', isRedRangeR)
+    # print('G', isRedRangeG)
+    # print('B', isRedRangeB)
 
     return isRedRangeR and isRedRangeG and isRedRangeB
 
@@ -126,8 +134,8 @@ def isRed():
 # BLUE
 # ---------------------------------------------------------------------------------------------------------------
 
-blueRangeLefttMin = [3, 15, 65]
-blueRangeLeftMax = [8, 20, 72]
+blueRangeLefttMin = [3, 11, 55]
+blueRangeLeftMax = [8, 20, 65]
 
 def isBlueLeft():
     valueSensorColorLeft = getSensorColorLeft()
@@ -139,8 +147,8 @@ def isBlueLeft():
     return isBlueRangeR and isBlueRangeG and isBlueRangeB
 
 
-blueRangeRightMin = [1, 12, 18]
-blueRangeRightMax = [5, 15, 23]
+blueRangeRightMin = [1, 12, 78]
+blueRangeRightMax = [10, 20, 85]
 
 def isBlueRight():
     valueSensorColorRight = getSensorColorRight()
