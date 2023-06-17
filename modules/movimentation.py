@@ -13,7 +13,7 @@ inicio = True
 
 
 def beggin_choosing():
-    print("begginado")
+    # print("begginado")
     moveDistanceBack(100)
     while not isBlackRight():
         if near_object():
@@ -38,7 +38,7 @@ def followLine():
 
 def start():
     # leftGreen()
-    print("deu start")
+    # print("deu start")
     followLine()
     if(isRed()):
         stop()
@@ -51,7 +51,7 @@ def start():
 def firstPassInMovie():
     if(isRedRight() and count["School"] == 1 and count["Movie"] == 0):
         stop()
-        print("passa_pelo movie")
+        # print("passa_pelo movie")
         moveDistanceFoward(120)
         count["Movie"] += 1   
 
@@ -68,13 +68,13 @@ def firstPassInTubeArea():
 def ajustBlueLine():
     if(isBlue()):
         stop()
-        print("ajustou")
+        # print("ajustou")
         moveDistanceBack(25)
         moveRight(100)
         beggin_choosing()
 
 def findFirstTube():
-    print("fidando first tube")
+    # print("fidando first tube")
     firstPassInMovie()
     firstPassInTubeArea()
     ajustBlueLine()

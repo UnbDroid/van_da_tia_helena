@@ -5,7 +5,7 @@ from pybricks.robotics import DriveBase
 motorLeft = Motor(Port.A)
 motorRight = Motor(Port.B)
 garra = Motor(Port.C)
-motors = DriveBase(motorLeft, motorRight, wheel_diameter= 41, axle_track=108)
+motors = DriveBase(motorLeft, motorRight, wheel_diameter= 41, axle_track=106.5)
 motors.settings(100, 270, 150) #velocidade_reto / aceleração reto / velocidade de giro / aceleração de giro
 
 

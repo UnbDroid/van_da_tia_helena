@@ -49,10 +49,7 @@ ev3 = EV3Brick()
 #     fechar()
 #     Abrir()
 
-
-
-
 while True:
     start()
     findFirstTube()
-    # print(distance())
+    print(distance())
