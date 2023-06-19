@@ -22,11 +22,11 @@ def stop():
     Rodas.stop()
     wait(300)
     
-def Left():
-    Rodas.turn(-80)
-    Rodas.straight(50)
+def Left(value):
+    Rodas.turn(-value)
+   
     
-def Right():
-    Rodas.turn(80)
-    Rodas.straight(50)
+def Right(value):
+    Rodas.turn(value)
+    
     
