@@ -12,14 +12,14 @@ motors.settings(100, 270, 150) #velocidade_reto / aceleração reto / velocidade
 
 def Fechar():
     garra.run(-300)
-    time.sleep(6)
+    time.sleep(5)
     garra.stop()
     garra.hold()
 
 
 def Abrir():
     garra.run(300) #Testar essa função depois
-    time.sleep(4)#ver se conseguimos passar parametro que de um tempo relacionado ao tempo de fechamento ou se tempo constante é melhor
+    time.sleep(5)#ver se conseguimos passar parametro que de um tempo relacionado ao tempo de fechamento ou se tempo constante é melhor
     garra.hold()
 
 def moveFoward(velocidade):

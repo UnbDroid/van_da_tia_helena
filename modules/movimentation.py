@@ -19,7 +19,9 @@ def beggin_choosing():
     while not isBlackRight():
         moveFoward(20)
         if isBlueLeft():
-            moveRigth(10)
+            moveRight(30)
+            moveDistanceFoward(25)
+            moveLeft(30)
         if near_object():
             stop()
             grab()
@@ -30,14 +32,14 @@ def beggin_choosing():
         grab_next()
 def grab(): # averiguar como escolher distancia
     moveLeft(90)
-    moveDistanceFoward(20)  # calibrar depois
-    fechar()
+    moveDistanceFoward(50)  # calibrar depois
+    Fechar()
 
 def grab_next():
-    moveDistanceFoward(50)  # averiguar como escolher distancia
+    moveDistanceFoward(70)  # averiguar como escolher distancia
     moveLeft(90)
-    moveDistanceFoward(20)  # calibrar depois
-    fechar()
+    moveDistanceFoward(40)  # calibrar depois
+    Fechar()
 
 def followLine():
     if(isBlackRight()):
