@@ -11,9 +11,7 @@ motors.settings(100, 270, 150) #velocidade_reto / aceleração reto / velocidade
 
 
 def Fechar():
-    garra.run(-300)
-    time.sleep(5)
-    garra.stop()
+    garra.run_time(-300, 4550)
     garra.hold()
 
 

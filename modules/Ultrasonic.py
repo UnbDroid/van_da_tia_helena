@@ -7,10 +7,9 @@ from pybricks.robotics import DriveBase
 sonic = UltrasonicSensor(Port.S3)
 
 def distance():
-    print(sonic.distance())
     return sonic.distance()
 
-def near_object():
+def is_15_tube():
     if distance() <= 110:
         return True
     else:
