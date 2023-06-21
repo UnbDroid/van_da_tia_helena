@@ -3,7 +3,7 @@
 from pybricks.ev3devices import ColorSensor
 from pybricks.parameters import Port
 from pybricks.tools import wait
-from Modules.Constantes import *
+from Modules.constantes import *
 
 sensorColorRight = ColorSensor(Port.S2)
 sensorColorLeft = ColorSensor(Port.S1)
@@ -12,11 +12,11 @@ sensorColorLeft = ColorSensor(Port.S1)
 # ---------------------------------------------------------------------------------------------------------------------------------------#
 
 
-def ColorRight():
+def color_right():
     return sensorColorRight.rgb()
 
 
-def ColorLeft():
+def color_left():
     return sensorColorLeft.rgb()
     
 
@@ -24,72 +24,116 @@ def ColorLeft():
 # ---------------------------------------------------------------------------------------------------------------------------------------#
 
 
-def is_BlackRight():
-    # BLackRangeLeft é o range que foi printado
+def is_black_right():
     
-    isBlackR = blackRangeRightMin[0] <= ColorRight()[0] <= blackRangeRightMax[0]
-    isBlackG = blackRangeRightMin[1] <= ColorRight()[1] <= blackRangeRightMax[1]
-    isBlackB = blackRangeRightMin[2] <= ColorRight()[2] <= blackRangeRightMax[2]
     
-    return isBlackR and isBlackG and isBlackB
-
-def is_BlackLeft():
-    isBlackR = blackRangeLeftMin[0] <= ColorLeft()[0] <= blackRangeLeftMax[0]
-    isBlackG = blackRangeLeftMin[1] <= ColorLeft()[1] <= blackRangeLeftMax[1]
-    isBlackB = blackRangeLeftMin[2] <= ColorLeft()[2] <= blackRangeLeftMax[2]
+    isBlackR = BLACK_RANGE_RIGHT_MIN[0] <= color_right()[0] <= BLACK_RANGE_RIGHT_MAX[0]
+    isBlackG = BLACK_RANGE_RIGHT_MIN[1] <= color_right()[1] <= BLACK_RANGE_RIGHT_MAX[1]
+    isBlackB = BLACK_RANGE_RIGHT_MIN[2] <= color_right()[2] <= BLACK_RANGE_RIGHT_MAX[2]
     
     return isBlackR and isBlackG and isBlackB
 
-def is_Black():
-    return is_BlackRight() and is_BlackLeft()
+def is_black_left():
+    isBlackR = BLACK_RANGE_LEFT_MIN[0] <= color_left()[0] <= BLACK_RANGE_LEFT_MAX[0]
+    isBlackG = BLACK_RANGE_LEFT_MIN[1] <= color_left()[1] <= BLACK_RANGE_LEFT_MAX[1]
+    isBlackB = BLACK_RANGE_LEFT_MIN[2] <= color_left()[2] <= BLACK_RANGE_LEFT_MAX[2]
+    
+    return isBlackR and isBlackG and isBlackB
+
+def is_black():
+    return is_black_right() and is_black_left()
 
 
 # White
 # ---------------------------------------------------------------------------------------------------------------------------------------#
 
 
-def is_WhiteRight():
-    # whiteRangeLeft é o range que foi printado
-    
-    isWhiteR = whiteRangeRightMin[0] <= ColorRight()[0] <= whiteRangeRightMax[0]
-    isWhiteG = whiteRangeRightMin[1] <= ColorRight()[1] <= whiteRangeRightMax[1]
-    isWhiteB = whiteRangeRightMin[2] <= ColorRight()[2] <= whiteRangeRightMax[2]
+def is_white_right():
     
     
-    return isWhiteR and isWhiteG and isWhiteB
-
-def is_WhiteLeft():
-    isWhiteR = whiteRangeLeftMin[0] <= ColorLeft()[0] <= whiteRangeLeftMax[0]
-    isWhiteG = whiteRangeLeftMin[1] <= ColorLeft()[1] <= whiteRangeLeftMax[1]
-    isWhiteB = whiteRangeLeftMin[2] <= ColorLeft()[2] <= whiteRangeLeftMax[2]
+    isWhiteR = WHITE_RANGE_RIGHT_MIN[0] <= color_right()[0] <= WHITE_RANGE_RIGHT_MAX[0]
+    isWhiteG = WHITE_RANGE_RIGHT_MIN[1] <= color_right()[1] <= WHITE_RANGE_RIGHT_MAX[1]
+    isWhiteB = WHITE_RANGE_RIGHT_MIN[2] <= color_right()[2] <= WHITE_RANGE_RIGHT_MAX[2]
+    
     
     return isWhiteR and isWhiteG and isWhiteB
 
-def is_White():
-    return is_WhiteRight() and is_WhiteLeft()
+def is_white_left():
+    isWhiteR = WHITE_RANGE_LEFT_MIN[0] <= color_left()[0] <= WHITE_RANGE_LEFT_MAX[0]
+    isWhiteG = WHITE_RANGE_LEFT_MIN[1] <= color_left()[1] <= WHITE_RANGE_LEFT_MAX[1]
+    isWhiteB = WHITE_RANGE_LEFT_MIN[2] <= color_left()[2] <= WHITE_RANGE_LEFT_MAX[2]
+    
+    return isWhiteR and isWhiteG and isWhiteB
+
+def is_white():
+    return is_white_right() and is_white_left()
 
 
 # Red
 # ------------------------------------------------------------------------------------------------------------------------ #
 
-def is_RedRight():
+def is_red_right():
     
-    isRedR = redRangeRightMin[0] <= ColorRight()[0] <= redRangeRightMax[0]
-    isRedG = redRangeRightMin[1] <= ColorRight()[1] <= redRangeRightMax[1]
-    isRedB = redRangeRightMin[2] <= ColorRight()[2] <= redRangeRightMax[2]
-    
-    return isRedR and isRedG and isRedB
-
-def is_RedLeft():
-    
-    isRedR = redRangeLeftMin[0] <= ColorLeft()[0] <= redRangeLeftMax[0]
-    isRedG = redRangeLeftMin[1] <= ColorLeft()[1] <= redRangeLeftMax[1]
-    isRedB = redRangeLeftMin[2] <= ColorLeft()[2] <= redRangeLeftMax[2]
+    isRedR = RED_RANGE_RIGHT_MIN[0] <= color_right()[0] <= RED_RANGE_RIGHT_MAX[0]
+    isRedG = RED_RANGE_RIGHT_MIN[1] <= color_right()[1] <= RED_RANGE_RIGHT_MAX[1]
+    isRedB = RED_RANGE_RIGHT_MIN[2] <= color_right()[2] <= RED_RANGE_RIGHT_MAX[2]
     
     return isRedR and isRedG and isRedB
 
-def is_Red():
-    return is_RedRight() and is_RedLeft()
+def is_red_left():
+    
+    isRedR = RED_RANGE_LEFT_MIN[0] <= color_left()[0] <= RED_RANGE_LEFT_MAX[0]
+    isRedG = RED_RANGE_LEFT_MIN[1] <= color_left()[1] <= RED_RANGE_LEFT_MAX[1]
+    isRedB = RED_RANGE_LEFT_MIN[2] <= color_left()[2] <= RED_RANGE_LEFT_MAX[2]
+    
+    return isRedR and isRedG and isRedB
+
+def is_red():
+    return is_red_right() and is_red_left()
+
+# Blue
+# ------------------------------------------------------------------------------------------------------------------------ #
+
+def is_blue_right():
+
+    isBlueR = BLUE_RANGE_RIGHT_MIN[0] <= color_right()[0] <= BLUE_RANGE_RIGHT_MAX[0]
+    isBlueG = BLUE_RANGE_RIGHT_MIN[1] <= color_right()[1] <= BLUE_RANGE_RIGHT_MAX[1]
+    isBlueB = BLUE_RANGE_RIGHT_MIN[2] <= color_right()[2] <= BLUE_RANGE_RIGHT_MAX[2]
+    
+    return isBlueR and isBlueG and isBlueB
+
+def is_blue_left():
+
+    isBlueR = BLUE_RANGE_LEFT_MIN[0] <= color_left()[0] <= BLUE_RANGE_LEFT_MAX[0]
+    isBlueG = BLUE_RANGE_LEFT_MIN[1] <= color_left()[1] <= BLUE_RANGE_LEFT_MAX[1]
+    isBlueB = BLUE_RANGE_LEFT_MIN[2] <= color_left()[2] <= BLUE_RANGE_LEFT_MAX[2]
+    
+    return isBlueR and isBlueG and isBlueB
+
+def is_blue():
+    return is_blue_right() and is_blue_left()
+
+# BLUE AND WHITE
+
+def is_bluewhite_right():
+    
+    isBlueR = BLUEWHITE_RANGE_RIGHT_MIN[0] <= color_right()[0] <= BLUEWHITE_RANGE_RIGHT_MAX[0]
+    isBlueG = BLUEWHITE_RANGE_RIGHT_MIN[1] <= color_right()[1] <= BLUEWHITE_RANGE_RIGHT_MAX[1]
+    isBlueB = BLUEWHITE_RANGE_RIGHT_MIN[2] <= color_right()[2] <= BLUEWHITE_RANGE_RIGHT_MAX[2]
+    
+    return isBlueR and isBlueG and isBlueB
+
+def is_bluewhite_left():
+    
+    isBlueR = BLUEWHITE_RANGE_LEFT_MIN[0] <= color_left()[0] <= BLUEWHITE_RANGE_LEFT_MAX[0]
+    isBlueG = BLUEWHITE_RANGE_LEFT_MIN[1] <= color_left()[1] <= BLUEWHITE_RANGE_LEFT_MAX[1]
+    isBlueB = BLUEWHITE_RANGE_LEFT_MIN[2] <= color_left()[2] <= BLUEWHITE_RANGE_LEFT_MAX[2]
+    
+    return isBlueR and isBlueG and isBlueB
+
+def is_bluewhite():
+    return is_bluewhite_right() and is_bluewhite_left()
+    
 
 
     

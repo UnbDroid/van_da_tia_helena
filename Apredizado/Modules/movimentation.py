@@ -6,55 +6,73 @@ Contador_vermelho=0
 
 # Contadores --------------------------------------------------------
 
-def getContador_vermelho():
+def get_contador_vermelho():
     global Contador_vermelho
     return Contador_vermelho
 
-def setContador_vermelho(value):
+def set_contador_vermelho(value):
     global Contador_vermelho
     Contador_vermelho = value
 
 # Moviment --------------------------------------------------------------
 
-def Follow_Line():
+def follow_line():
 
-    if is_BlackRight():
-        Right(30)  
+    if is_black_right():
+        right(30)  
         
-    elif is_BlackLeft():
-        Left(30)    
+    elif is_black_left():
+        left(30)    
     else:
-        run()
+        run(120)
     
 
-def First():
-    
-    
-    
-    stop()
+def first():
+     
+    stop(300)
     
     dist(60)
-    stop()
+    stop(300)
     
-    Left(90)
-    stop()
+    left(90)
+    stop(300)
     
     dist(120)
     
         
-def First_Red():
+def first_red():
     
-    setContador_vermelho(1)
+    set_contador_vermelho(1)
     
-    stop()
-    dist(100)
+    stop(300)
+    dist(90)
     
     
-def First_Coleta():
+def first_coleta():
+    # Entrando no vermelho de coleta pela primeira vez !
     
-    stop()
-    Right(90)
-    dist(50)       
+    stop(300)
+    dist(65)
+    right(95)
+    dist(45)
+    
+def blue_line_coleta():
+    # Sempre que entrar na coleta irá fazer isso :))
+    
+    stop(300)
+    dist(-25)
+    right(94)
+    print(is_white_left())
+    
+    while is_white_right():
+        print("ENTREIIII!")
+        run(-100)
+    if is_black():
+        stop(3000)
+        #colocar ultrassom :))
+    
+    
+    
                
     
     

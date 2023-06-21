@@ -9,24 +9,26 @@ motorRight = Motor(Port.B)
 Rodas = DriveBase(motorLeft, motorRight, wheel_diameter=41, axle_track=106.5)
 
 
-# def Standard():
-#     Rodas.settings(straight_speed=100,straight_acceleration=100) 
+
 
 def dist(i):
     Rodas.straight(i)
     
-def run():
-    Rodas.drive(150,0)
-
-def stop():
-    Rodas.stop()
-    wait(300)
+def run(velocidade):
+    Rodas.drive(velocidade,0)
     
-def Left(value):
+def back(velocidade):
+    Rodas.drive(-velocidade,0)
+    
+def stop(tempo):
+    Rodas.stop()
+    wait(tempo)
+    
+def left(value):
     Rodas.turn(-value)
    
     
-def Right(value):
+def right(value):
     Rodas.turn(value)
     
     
