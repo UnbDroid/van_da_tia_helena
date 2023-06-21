@@ -48,8 +48,11 @@ ev3 = EV3Brick()
 # while True:
 #     fechar()
 #     Abrir()
-
 while True:
+    print(gyro.angle())
     start()
     findFirstTube()
-    print(distance())
+# Abrir()
+# Fechar()
+
+    # print(distance())

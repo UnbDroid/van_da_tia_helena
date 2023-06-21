@@ -1,6 +1,7 @@
 from pybricks.ev3devices import Motor
 from pybricks.parameters import Port
 from pybricks.robotics import DriveBase
+import time
 
 motorLeft = Motor(Port.A)
 motorRight = Motor(Port.B)
@@ -9,14 +10,16 @@ motors = DriveBase(motorLeft, motorRight, wheel_diameter= 41, axle_track=106.5)
 motors.settings(100, 270, 150) #velocidade_reto / aceleração reto / velocidade de giro / aceleração de giro
 
 
-def fechar():
-    garra.run_until_stalled(180, then=Stop.COAST, duty_limit=None)
+def Fechar():
+    garra.run(-300)
+    time.sleep(6)
+    garra.stop()
     garra.hold()
 
 
 def Abrir():
-    garra.speed(-180) #Testar essa função depois
-    time.sleep(5)#ver se conseguimos passar parametro que de um tempo relacionado ao tempo de fechamento ou se tempo constante é melhor
+    garra.run(300) #Testar essa função depois
+    time.sleep(4)#ver se conseguimos passar parametro que de um tempo relacionado ao tempo de fechamento ou se tempo constante é melhor
     garra.hold()
 
 def moveFoward(velocidade):
