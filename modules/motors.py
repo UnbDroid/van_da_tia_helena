@@ -22,28 +22,28 @@ def Abrir():
     time.sleep(5)#ver se conseguimos passar parametro que de um tempo relacionado ao tempo de fechamento ou se tempo constante é melhor
     garra.hold()
 
-def moveFoward(velocidade):
+def move_foward(velocidade):
     motors.drive(velocidade, 0)
 
-def moveBack(velocidade):
+def move_back(velocidade):
     motors.drive(-velocidade, 0)
 
-def moveDistanceFoward(distance):
+def move_distance_foward(distance):
     motors.straight(distance)
 
-def moveDistanceBack(distance):
+def move_distance_back(distance):
     motors.straight(-distance)
 
-def moveLeftTime(time):
+def move_left_time(time):
     motors.drive_time(0, 80, time)
 
-def moveRightTime(time):
+def move_right_time(time):
     motors.drive_time(0, -80, time)
 
-def moveLeft(angle):
+def move_left(angle):
     motors.turn(-angle)
 
-def moveRight(angle):
+def move_right(angle):
     motors.turn(angle)
 
 def stop():

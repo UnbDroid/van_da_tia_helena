@@ -2,172 +2,172 @@ from pybricks.ev3devices import ColorSensor
 from pybricks.parameters import Port
 
 
-sensorColorRight = ColorSensor(Port.S2)
-sensorColorLeft = ColorSensor(Port.S1)
+sensor_color_right = ColorSensor(Port.S2)
+sensor_color_left = ColorSensor(Port.S1)
 
 
 #Declarações de métodos
 
-def getSensorColorRight():
-    return sensorColorRight.rgb()
+def get_sensor_color_right():
+    return sensor_color_right.rgb()
 
 
-def getSensorColorLeft():
-    return sensorColorLeft.rgb()
+def get_sensor_color_left():
+    return sensor_color_left.rgb()
 
 
 # WHITE
 # ---------------------------------------------------------------------------------------------------------------------
 
-whiteRangeLeftR = [31, 32, 33, 34, 35, 36, 37]
-whiteRangeLeftG = [28, 29, 30 ,31, 32, 33, 34, 35, 36]
-whiteRangeLeftB = [90, 89 ,88, 87, 86, 85, 84]
+white_range_left_r = [31, 32, 33, 34, 35, 36, 37]
+white_range_left_g = [28, 29, 30 ,31, 32, 33, 34, 35, 36]
+white_range_left_b = [90, 89 ,88, 87, 86, 85, 84]
 
 
-def isWhiteLeft():
-    valueSensorColorLeft = getSensorColorLeft()
+def is_white_left():
+    value_sensor_color_left = get_sensor_color_left()
 
-    isWhiteRangeR = valueSensorColorLeft[0] in whiteRangeLeftR
-    isWhiteRangeG = valueSensorColorLeft[1] in whiteRangeLeftG
-    isWhiteRangeB = valueSensorColorLeft[2] in whiteRangeLeftB
+    is_white_range_r = value_sensor_color_left[0] in white_range_left_r
+    is_white_range_g = value_sensor_color_left[1] in white_range_left_g
+    is_white_range_b = value_sensor_color_left[2] in white_range_left_b
 
-    return isWhiteRangeR and isWhiteRangeG and isWhiteRangeB
-
-
-whiteRangeRightMin = [35, 30, 95]
-whiteRangeRightMax = [45, 40, 105]
-
-def isWhiteRight():
-    valueSensorColorRight = getSensorColorRight()
-
-    isWhiteRangeR = whiteRangeRightMin[0] <= valueSensorColorRight[0] <= whiteRangeRightMax[0]
-    isWhiteRangeG = whiteRangeRightMin[1] <= valueSensorColorRight[1] <= whiteRangeRightMax[1]
-    isWhiteRangeB = whiteRangeRightMin[2] <= valueSensorColorRight[2] <= whiteRangeRightMax[2]
-
-    return isWhiteRangeR and isWhiteRangeG and isWhiteRangeB
+    return is_white_range_r and is_white_range_g and is_white_range_b
 
 
-def isWhite():
-    return isWhiteRight() and isWhiteLeft()
+white_range_right_min = [35, 30, 95]
+white_range_right_max = [45, 40, 105]
+
+def is_white_right():
+    value_sensor_color_right = get_sensor_color_right()
+
+    is_white_range_r = white_range_right_min[0] <= value_sensor_color_right[0] <= white_range_right_max[0]
+    is_white_range_g = white_range_right_min[1] <= value_sensor_color_right[1] <= white_range_right_max[1]
+    is_white_range_b = white_range_right_min[2] <= value_sensor_color_right[2] <= white_range_right_max[2]
+
+    return is_white_range_r and is_white_range_g and is_white_range_b
+
+
+def is_white():
+    return is_white_right() and is_white_left()
 
 # BLACK
 # ---------------------------------------------------------------------------------------------------------------
 
-blackRangeLeftR = [0, 1, 2, 3, 4 ,5, 6, 7, 8, 9, 10, 11, 12, 13]
-blackRangeLeftG = [0, 1, 2, 3, 4 ,5, 6, 7, 8, 9, 10, 11, 12, 13]
-blackRangeLeftB = [0, 1, 2, 3, 4 ,5, 6, 7, 8, 9, 10, 11, 12, 13]
+black_range_left_r = [0, 1, 2, 3, 4 ,5, 6, 7, 8, 9, 10, 11, 12, 13]
+black_range_left_g = [0, 1, 2, 3, 4 ,5, 6, 7, 8, 9, 10, 11, 12, 13]
+black_range_left_b = [0, 1, 2, 3, 4 ,5, 6, 7, 8, 9, 10, 11, 12, 13]
 
 
-def isBlackLeft():
-    valueSensorColorLeft = getSensorColorLeft()
+def is_black_left():
+    value_sensor_color_left = get_sensor_color_left()
 
-    isBlackRangeR = valueSensorColorLeft[0] in blackRangeLeftR
-    isBlackRangeG = valueSensorColorLeft[1] in blackRangeLeftG
-    isBlackRangeB = valueSensorColorLeft[2] in blackRangeLeftB
+    is_black_range_r = value_sensor_color_left[0] in black_range_left_r
+    is_black_range_g = value_sensor_color_left[1] in black_range_left_g
+    is_black_range_b = value_sensor_color_left[2] in black_range_left_b
 
-    return isBlackRangeR and isBlackRangeG and isBlackRangeB
+    return is_black_range_r and is_black_range_g and is_black_range_b
 
 
-blackRangeRightMin = [1, 2, 3]
-blackRangeRightMax = [12, 20, 12]
+black_range_right_min = [1, 2, 3]
+black_range_right_max = [12, 20, 12]
 
-def isBlackRight():
-    valueSensorColorRight = getSensorColorRight()
+def is_black_right():
+    value_sensor_color_right = get_sensor_color_right()
 
-    isBlackRangeR = blackRangeRightMin[0] <= valueSensorColorRight[0] <= blackRangeRightMax[0]
-    isBlackRangeG = blackRangeRightMin[1] <= valueSensorColorRight[1] <= blackRangeRightMax[1]
-    isBlackRangeB = blackRangeRightMin[2] <= valueSensorColorRight[2] <= blackRangeRightMax[2]
+    is_black_range_r = black_range_right_min[0] <= value_sensor_color_right[0] <= black_range_right_max[0]
+    is_black_range_g = black_range_right_min[1] <= value_sensor_color_right[1] <= black_range_right_max[1]
+    is_black_range_b = black_range_right_min[2] <= value_sensor_color_right[2] <= black_range_right_max[2]
 
-    return isBlackRangeR and isBlackRangeG and isBlackRangeB
+    return is_black_range_r and is_black_range_g and is_black_range_b
 
-def isBlack():
-    return isBlackRight() and isBlackLeft()
+def is_black():
+    return is_black_right() and is_black_left()
 
 
 # RED
 # ---------------------------------------------------------------------------------------------------------------
 
-# redRangeRightR = [18, 19, 20, 21, 22, 23, 24, 25, 26, 27]
-# redRangeRightG = [1, 2, 3, 4, 5, 6, 7]
-# redRangeRightB = [0, 1, 2, 3, 4]
+# red_range_right_r = [18, 19, 20, 21, 22, 23, 24, 25, 26, 27]
+# red_range_right_g = [1, 2, 3, 4, 5, 6, 7]
+# red_range_right_b = [0, 1, 2, 3, 4]
 
-redRangeRightR = [30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40]
-redRangeRightG = [1, 2, 3, 4, 5, 6, 7]
-redRangeRightB = [7, 8, 9, 10, 11, 12, 13, 14]
-
-
-def isRedRight():
-    valueSensorColorRight = getSensorColorRight()
-
-    isRedRangeR = valueSensorColorRight[0] in redRangeRightR
-    isRedRangeG = valueSensorColorRight[1] in redRangeRightG
-    isRedRangeB = valueSensorColorRight[2] in redRangeRightB
-
-    # print('R', isRedRangeR)
-    # print('G', isRedRangeG)
-    # print('B', isRedRangeB)
-
-    return isRedRangeR and isRedRangeG and isRedRangeB
+red_range_right_r = [30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40]
+red_range_right_g = [1, 2, 3, 4, 5, 6, 7]
+red_range_right_b = [7, 8, 9, 10, 11, 12, 13, 14]
 
 
+def is_red_right():
+    value_sensor_color_right = get_sensor_color_right()
 
-redRangeLefttMin = [25, 1, 2]
-redRangeLeftMax = [40, 10, 12]
+    is_red_range_r = value_sensor_color_right[0] in red_range_right_r
+    is_red_range_g = value_sensor_color_right[1] in red_range_right_g
+    is_red_range_b = value_sensor_color_right[2] in red_range_right_b
 
-def isRedLeft():
-    valueSensorColorLeft = getSensorColorLeft()
+    # print('R', is_red_range_r)
+    # print('G', is_red_range_g)
+    # print('B', is_red_range_b)
 
-    isRedRangeR = redRangeLefttMin[0] <= valueSensorColorLeft[0] <= redRangeLeftMax[0]
-    isRedRangeG = redRangeLefttMin[1] <= valueSensorColorLeft[1] <= redRangeLeftMax[1]
-    isRedRangeB = redRangeLefttMin[2] <= valueSensorColorLeft[2] <= redRangeLeftMax[2]
-
-    # print('R', isRedRangeR)
-    # print('G', isRedRangeG)
-    # print('B', isRedRangeB)
-
-    return isRedRangeR and isRedRangeG and isRedRangeB
+    return is_red_range_r and is_red_range_g and is_red_range_b
 
 
-def isRed():
-    return isRedRight() and isRedLeft()
+
+red_range_left_min = [25, 1, 2]
+red_range_left_max = [40, 10, 12]
+
+def is_red_left():
+    value_sensor_color_left = get_sensor_color_left()
+
+    is_red_range_r = red_range_left_min[0] <= value_sensor_color_left[0] <= red_range_left_max[0]
+    is_red_range_g = red_range_left_min[1] <= value_sensor_color_left[1] <= red_range_left_max[1]
+    is_red_range_b = red_range_left_min[2] <= value_sensor_color_left[2] <= red_range_left_max[2]
+
+    # print('R', is_red_range_r)
+    # print('G', is_red_range_g)
+    # print('B', is_red_range_b)
+
+    return is_red_range_r and is_red_range_g and is_red_range_b
+
+
+def is_red():
+    return is_red_right() and is_red_left()
 
 # BLUE
 # ---------------------------------------------------------------------------------------------------------------
 
-blueRangeLefttMin = [3, 11, 55]
-blueRangeLeftMax = [8, 20, 65]
+blue_range_left_min = [3, 11, 55]
+blue_range_left_max = [8, 20, 65]
 
-def isBlueLeft():
-    valueSensorColorLeft = getSensorColorLeft()
+def is_blue_left():
+    value_sensor_color_left = get_sensor_color_left()
 
-    isBlueRangeR = blueRangeLefttMin[0] <= valueSensorColorLeft[0] <= blueRangeLeftMax[0]
-    isBlueRangeG = blueRangeLefttMin[1] <= valueSensorColorLeft[1] <= blueRangeLeftMax[1]
-    isBlueRangeB = blueRangeLefttMin[2] <= valueSensorColorLeft[2] <= blueRangeLeftMax[2]
+    is_blue_range_r = blue_range_left_min[0] <= value_sensor_color_left[0] <= blue_range_left_max[0]
+    is_blue_range_g = blue_range_left_min[1] <= value_sensor_color_left[1] <= blue_range_left_max[1]
+    is_blue_range_b = blue_range_left_min[2] <= value_sensor_color_left[2] <= blue_range_left_max[2]
 
-    return isBlueRangeR and isBlueRangeG and isBlueRangeB
-
-
-blueRangeRightMin = [1, 12, 78]
-blueRangeRightMax = [10, 20, 85]
-
-def isBlueRight():
-    valueSensorColorRight = getSensorColorRight()
-
-    isBlueRangeR = blueRangeRightMin[0] <= valueSensorColorRight[0] <= blueRangeRightMax[0]
-    isBlueRangeG = blueRangeRightMin[1] <= valueSensorColorRight[1] <= blueRangeRightMax[1]
-    isBlueRangeB = blueRangeRightMin[2] <= valueSensorColorRight[2] <= blueRangeRightMax[2]
-
-    return isBlueRangeR and isBlueRangeG and isBlueRangeB
+    return is_blue_range_r and is_blue_range_g and is_blue_range_b
 
 
-def isBlue():
-    return isBlueRight() and isBlueLeft()
+blue_range_right_min = [1, 12, 78]
+blue_range_right_max = [10, 20, 85]
+
+def is_blue_right():
+    value_sensor_color_right = get_sensor_color_right()
+
+    is_blue_range_r = blue_range_right_min[0] <= value_sensor_color_right[0] <= blue_range_right_max[0]
+    is_blue_range_g = blue_range_right_min[1] <= value_sensor_color_right[1] <= blue_range_right_max[1]
+    is_blue_range_b = blue_range_right_min[2] <= value_sensor_color_right[2] <= blue_range_right_max[2]
+
+    return is_blue_range_r and is_blue_range_g and is_blue_range_b
+
+
+def is_blue():
+    return is_blue_right() and is_blue_left()
 
 # ---------------------------------------------------------------------------------------------------------------------
 
-def printColorRight():
-    return print('Direita: ', getSensorColorRight())
+def print_color_right():
+    return print('Direita: ', get_sensor_color_right())
 
 
-def printColorLeft():
-    return print('Esquerda ', getSensorColorLeft())
+def print_color_left():
+    return print('Esquerda ', get_sensor_color_left())

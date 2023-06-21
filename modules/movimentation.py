@@ -11,17 +11,16 @@ count["Tube"] = 0
 
 inicio = True
 
-
 def beggin_choosing():
     # print("begginado")
     grabbed = False
-    moveDistanceBack(100)
-    while not isBlackRight():
-        moveFoward(20)
-        if isBlueLeft():
-            moveRight(30)
-            moveDistanceFoward(25)
-            moveLeft(30)
+    move_distance_back(100)
+    while not is_black_right():
+        move_foward(20)
+        if is_blue_left():
+            move_right(30)
+            move_distance_foward(25)
+            move_left(30)
         if near_object():
             stop()
             grab()
@@ -31,68 +30,62 @@ def beggin_choosing():
     if(not grabbed):
         grab_next()
 def grab(): # averiguar como escolher distancia
-    moveLeft(90)
-    moveDistanceFoward(50)  # calibrar depois
+    move_left(90)
+    move_distance_foward(50)  # calibrar depois
     Fechar()
 
 def grab_next():
-    moveDistanceFoward(70)  # averiguar como escolher distancia
-    moveLeft(90)
-    moveDistanceFoward(40)  # calibrar depois
+    move_distance_foward(70)  # averiguar como escolher distancia
+    move_left(90)
+    move_distance_foward(40)  # calibrar depois
     Fechar()
 
-def followLine():
-    if(isBlackRight()):
-        moveRight(20)
-    elif(isBlackLeft()):
-        moveLeft(20)
+def follow_line():
+    if(is_black_right()):
+        move_right(20)
+    elif(is_black_left()):
+        move_left(20)
     else:
-        moveFoward(80)
+        move_foward(80)
 
 def start():
     # leftGreen()
     # print("deu start")
-    followLine()
-    if(isRed()):
+    follow_line()
+    if(is_red()):
         stop()
         wait(1000)
-        moveDistanceFoward(70) 
-        moveLeft(90)
-        moveDistanceFoward(70) 
+        move_distance_foward(70) 
+        move_left(90)
+        move_distance_foward(70) 
         count["School"] += 1
 
-def firstPassInMovie():
-    if(isRedRight() and count["School"] == 1 and count["Movie"] == 0):
+def first_pass_in_movie():
+    if(is_red_right() and count["School"] == 1 and count["Movie"] == 0):
         stop()
         # print("passa_pelo movie")
-        moveDistanceFoward(120)
+        move_distance_foward(120)
         count["Movie"] += 1   
 
-def firstPassInTubeArea():
-    if(isRedRight() and count["Movie"] == 1 and count["Tube"] == 0):
+def first_pass_in_tube_area():
+    if(is_red_right() and count["Movie"] == 1 and count["Tube"] == 0):
         stop()
         wait(2000)
         print("passa_pelo tubo")
-        moveDistanceFoward(60)
-        moveRight(100)
-        moveDistanceFoward(40)
+        move_distance_foward(60)
+        move_right(100)
+        move_distance_foward(40)
         count["Tube"] += 1 
 
-def ajustBlueLine():
-    if(isBlue()):
+def ajust_blue_line():
+    if(is_blue()):
         stop()
-        # print("ajustou")
-        moveDistanceBack(25)
-        moveRight(100)
+        move_distance_back(25)
+        move_right(100)
         beggin_choosing()
 
-def findFirstTube():
+def find_first_tube():
     # print("fidando first tube")
-    firstPassInMovie()
-    firstPassInTubeArea()
-    ajustBlueLine()
-
-
-
-        
-
+    first_pass_in_movie()
+    first_pass_in_tube_area()
+    ajust_blue_line()
