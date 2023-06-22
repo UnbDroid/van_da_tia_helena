@@ -44,6 +44,7 @@ from modules.movimentation import *
 while True:
    start()
    find_first_tube()
+   # print("rgb left", get_sensor_color_left(), "rgb right", get_sensor_color_right())
     
 # DEPOIS DA LINHA PRETA INCREMENTAR !!!!
 

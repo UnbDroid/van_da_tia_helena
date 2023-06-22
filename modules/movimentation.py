@@ -6,11 +6,12 @@ from modules.Ultrasonic import *
 from pybricks.tools import wait, StopWatch
 
 ev3 = EV3Brick()
-dic15 = {'Lanchonete': False, 'Escola': False, 'Cinema': False}
-dic15_keys = ["Lanchonete", "Escola", "Cinema"]
-dic10 = {'Lanchonete': False, 'Escola': False, 'Cinema': False}
-dic10_keys = ["Cinema", "Escola", "Lanchonete"]
 
+def adjust_blue():
+    if is_blue_left():
+        move_right(30)
+        move_distance_foward(25)
+        move_left(30)
 count = {}
 count["School"] = 0
 count["Movie"] = 1 # "Começar do vermelho área de coleta"
@@ -18,10 +19,29 @@ count["Lanchonete"] = 0
 count["Tube"] = 0
 
 relogio = StopWatch()
+def comeback(place):
+    pass
 def move_to(place):
     ev3.speaker.beep(120)
     print(place)
-def place(tubo):
+    while not is_red():
+        follow_line()
+    stop()
+    move_distance_foward(50)
+    if place == "Lanchonete":
+        move_right(90)
+        move_distance_foward(30)
+        while not is_red_right():
+            follow_line()
+        move_distance_foward(40)
+        move_right(90)
+        move_distance_foward(80)
+        Abrir()
+    else:
+        pass
+    comeback(place)
+
+def found_place(tubo):
     if tubo == "tubo_15":
         for place in dic15_keys:
             if not dic15[place]:
@@ -40,20 +60,17 @@ def beggin_choosing():
     move_distance_back(100)
     while not is_black_left():
         move_foward(20)
-        if is_blue_left():
-            move_right(30)
-            move_distance_foward(25)
-            move_left(30)
+        adjust_blue()
         if is_15_tube():
             # Count tubo 15
             stop()
             ev3.speaker.beep(300)
-            tubo = grab()
-            grabbed = True
+            tubo = "tubo_15"
+            grabbed = grab()
             break
     if(not grabbed):
         tubo = grab_next()
-    place(tubo)
+    found_place(tubo)
         
         
 def grab(): # averiguar como escolher distancia
@@ -61,7 +78,11 @@ def grab(): # averiguar como escolher distancia
     move_distance_foward(90)
       # calibrar depois
     Fechar()
-    return "tubo_15"
+    move_distance_back(30)
+    move_right(120)
+    move_distance_foward(40)
+    follow_line()
+    return True
 
 def grab_next():
     relogio.reset()

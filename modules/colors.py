@@ -89,7 +89,7 @@ def is_black():
 
 
 
-red_range_right_min = [59, 4, 12]
+red_range_right_min = [50, 4, 6]
 red_range_right_max = [76, 17, 24]
 
 
@@ -106,7 +106,7 @@ def is_red_right():
 
 #const
 red_range_left_min = [55, 6, 6]
-red_range_left_max = [71, 16, 16]
+red_range_left_max = [75, 21, 30]
 
 
 
