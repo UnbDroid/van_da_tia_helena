@@ -41,48 +41,12 @@ from modules.movimentation import *
 #         motor.run(-180)
 #     motor.hold()
 
-
-# while True:
-#     fechar()
-#     Abrir()
-
-# while True:
-#    start()
-#    find_first_tube()
+while True:
+   start()
+   find_first_tube()
     
-# DEPOIS DA LINHA PRETA INCREMENTAR !!!!!
+# DEPOIS DA LINHA PRETA INCREMENTAR !!!!
 
-relogio.reset()
-relogio.resume()
-TUBO_15 = False
-count_tubo_15 = 0
-count_tubo_10 = 0
-
-
-while relogio.time() < 1181:
-    
-    move_foward(100)
-    if is_15_tube():
-        count_tubo_15 += 1
-        TUBO_15 = True
-        move_left(90)
-        move_distance_foward(85)  # calibrar depois
-        Fechar()
-        stop()
-        wait(2000)
-        break
-
-if TUBO_15 == False:
-    
-    move_distance_foward(-20)
-    move_left(90)
-    move_distance_foward(85)  # calibrar depois
-    Fechar()
-    stop()
-    wait(2000)
-    count_tubo_10 += 1
-  
-      
 print(count_tubo_15)
 print(count_tubo_10)
     
