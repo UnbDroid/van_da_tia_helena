@@ -28,8 +28,6 @@ def move_to(place):
         move_right(90)
         move_distance_foward(80)
         open_grab()
-        move_back(100)
-        move_left(90)
     else:
         pass
     comeback(place)
