@@ -6,7 +6,7 @@ import time
 motorLeft = Motor(Port.A)
 motorRight = Motor(Port.B)
 
-motors = DriveBase(motorLeft, motorRight, wheel_diameter= 41, axle_track=106.5)
+motors = DriveBase(motorLeft, motorRight, wheel_diameter= 41, axle_track=109)
 motors.settings(100, 270, 150) #velocidade_reto / aceleração reto / velocidade de giro / aceleração de giro
 
 

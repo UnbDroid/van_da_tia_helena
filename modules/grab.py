@@ -11,5 +11,5 @@ def close_grab():
 
 def open_grab():
     grab.run(300) #Testar essa função depois
-    time.sleep(5)#ver se conseguimos passar parametro que de um tempo relacionado ao tempo de fechamento ou se tempo constante é melhor
+    time.sleep(4.5)#ver se conseguimos passar parametro que de um tempo relacionado ao tempo de fechamento ou se tempo constante é melhor
     grab.hold()
