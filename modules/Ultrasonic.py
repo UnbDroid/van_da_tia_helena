@@ -4,6 +4,7 @@ from pybricks.robotics import DriveBase
 from pybricks.ev3devices import Motor
 from pybricks.robotics import DriveBase
 from modules.movimentation import *
+
 sonic = UltrasonicSensor(Port.S3)
 
 def distance():
