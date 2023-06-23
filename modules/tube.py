@@ -2,7 +2,7 @@ from modules.grab import *
 from modules.constants import *
 from modules.ultrasonic import *
 from pybricks.tools import wait, StopWatch
-from modules.movimentations import *
+from modules.movimentation import *
 
 
 relogio = StopWatch()

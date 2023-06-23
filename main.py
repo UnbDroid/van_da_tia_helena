@@ -1,5 +1,6 @@
 #!/usr/bin/env pybricks-micropython
 from modules.movimentation import *
+from modules.constants import *
 
 # sensor15 = UltrasonicSensor(Port.S1)
 # sensor10 = UltrasonicSensor(Port.S4)
@@ -42,9 +43,10 @@ from modules.movimentation import *
 #     motor.hold()
 
 while True:
+   print(count)
    start()
    find_first_tube()
-   # print("rgb left", get_sensor_color_left(), "rgb right", get_sensor_color_right())
+   print("rgb left", get_sensor_color_left(), "rgb right", get_sensor_color_right())
     
 # DEPOIS DA LINHA PRETA INCREMENTAR !!!!
 

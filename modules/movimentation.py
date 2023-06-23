@@ -6,9 +6,10 @@ from modules.tube import *
 
 count = {}
 count["School"] = 0
-count["Movie"] = 0 # "Começar do vermelho área de coleta"
+count["Movie"] = 0  # "Começar do vermelho área de coleta"
 count["Lanchonete"] = 0
 count["Tube"] = 0
+
 
 def follow_line():
     if(is_black_right()):

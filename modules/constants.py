@@ -4,4 +4,3 @@ dic10 = {'Lanchonete': False, 'Escola': False, 'Cinema': False}
 dic10_keys = ["Cinema", "Escola", "Lanchonete"]
 
 
-

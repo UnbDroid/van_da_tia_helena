@@ -19,8 +19,8 @@ def get_sensor_color_left():
 # WHITE
 # ---------------------------------------------------------------------------------------------------------------------
 
-white_range_left_min = [62, 65, 95]
-white_range_left_max = [72, 75, 105]
+white_range_left_min = [62, 65, 90]
+white_range_left_max = [75, 75, 105]
 
 
 
@@ -34,7 +34,7 @@ def is_white_left():
     return is_white_range_r and is_white_range_g and is_white_range_b
 
 
-white_range_right_min = [69, 69, 95]
+white_range_right_min = [65, 65, 90]
 white_range_right_max = [79, 79, 105]
 
 def is_white_right():
@@ -89,8 +89,8 @@ def is_black():
 
 
 
-red_range_right_min = [50, 4, 6]
-red_range_right_max = [76, 17, 24]
+red_range_right_min = [45, 4, 6]
+red_range_right_max = [76, 20, 24]
 
 
 def is_red_right():
