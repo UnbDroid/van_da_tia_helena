@@ -5,7 +5,7 @@ import time
 grab = Motor(Port.C)
 
 def close_grab():
-    grab.run_time(-300, 4550)
+    grab.run_time(-300, 4590)
     grab.hold()
 
 

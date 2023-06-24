@@ -105,7 +105,7 @@ def is_red_right():
 
 
 #const
-red_range_left_min = [55, 6, 6]
+red_range_left_min = [45, 6, 6]
 red_range_left_max = [75, 21, 30]
 
 
