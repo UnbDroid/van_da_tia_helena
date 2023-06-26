@@ -11,8 +11,8 @@ from modules.constants import *
 
 # while True:
 #     print("--------------")
-#     print(print_color_right())
-#     print(print_color_left())
+#     print(get_sensor_color_right())
+#     print(get_sensor_color_left())
 #     print("--------------")
 #     wait(500)
     
@@ -43,10 +43,16 @@ from modules.constants import *
 #         motor.run(-180)
 #     motor.hold()
 
+
 while True:
    start()
    find_first_tube()
    fetch_tube_area()
+
+
+
+
+
    # print("rgb left", get_sensor_color_left(), "rgb right", get_sensor_color_right())
 # move_right(360)    
 # DEPOIS DA LINHA PRETA INCREMENTAR !!!!

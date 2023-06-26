@@ -44,29 +44,24 @@ def move_to_grab_next_tube():
     clock.reset()
     clock.resume()
     TUBO_15 = False
-    count_tubo_15 = 0
-    count_tubo_10 = 0
     while clock.time() < 1181:
         move_foward(100)
         if is_15_tube():
-            count_tubo_15 += 1
             TUBO_15 = True
-            move_left(90)
-            move_distance_foward(85)  # calibrar depois
+            move_left(97)
+            move_distance_foward(85)  
             close_grab()
             move_distance_back(30)
             move_left(120)
             move_distance_back(30)
             return "tubo_15"
     move_distance_foward(-20)
-    move_left(90)
-    move_distance_foward(85)  # calibrar depois
-    close_grab()
-    count_tubo_10 += 1
+    move_left(85) # 90
+    move_distance_foward(85)  
     close_grab()
     move_distance_back(30)
     move_left(120)
-    move_distance_back(30)
+    move_distance_back(30)  
     return "tubo_10"
 
 def found_place(tubo):
@@ -76,12 +71,14 @@ def found_place(tubo):
         while index < len(dic15_keys) and not moved:
             place = dic15_keys[index]
             if not dic15[place]:
+                
                 moved = True
                 dic15[place] = True
                 leave_tube(place)
-                print("movou")
+                print(place)
                 return_tube_area(place)
             index +=1
+            
     if tubo == "tubo_10":
         while index < len(dic10_keys) and not moved:
             place = dic10_keys[index]
@@ -112,17 +109,29 @@ def leave_tube(place):
         move_distance_foward(150)
         open_grab()
         print("SOLTOU")
+        
     elif place == "Escola":
         move_right(80)
         move_distance_foward(42)
         while not is_red_left():
             if is_red_right():
-                move_distance_foward(120)
+                move_distance_foward(110)
             follow_line()
         move_distance_foward(60)
         move_right(90)
         move_distance_foward(170)
         open_grab()
         print("SOLTOU")
-
-
+        
+    elif place == "Cinema":
+        print("indo pro cinema")
+        move_left(80)
+        move_distance_foward(42)
+        while not is_red_left():
+            follow_line()
+        move_distance_foward(60)
+        move_left(90)
+        move_distance_foward(170)
+        open_grab()
+        print("SOLTOU")
+        
