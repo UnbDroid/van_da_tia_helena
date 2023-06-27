@@ -2,6 +2,7 @@
 from modules.movimentations import *
 from modules.tube import *
 from modules.constants import *
+from pybricks.tools import wait, StopWatch
 
 # sensor15 = UltrasonicSensor(Port.S1)
 # sensor10 = UltrasonicSensor(Port.S4)
@@ -49,14 +50,8 @@ while True:
    find_first_tube()
    fetch_tube_area()
 
-
-
-
-
    # print("rgb left", get_sensor_color_left(), "rgb right", get_sensor_color_right())
-# move_right(360)    
-# DEPOIS DA LINHA PRETA INCREMENTAR !!!!
-
-# print(count_tubo_15)
-# print(count_tubo_10)
+# while True:
+#    move_right(360)
+#    wait(3000)  
     

@@ -13,10 +13,10 @@ ev3 = EV3Brick()
 def fetch_tube_area():
     if(is_blue()):
         stop()
-        move_distance_back(25)
+        move_distance_back(23)
         move_right(100)
         grabbed = False
-        move_distance_back(100)
+        move_distance_back(110)
         while not is_black_right():
             move_foward(20)
             adjust_blue()
@@ -37,14 +37,15 @@ def move_to_grab_tube():
     close_grab()
     move_distance_back(30)
     move_right(120)
-    move_distance_foward(40)
+    move_distance_back(30)
+    # move_distance_foward(40)
     return True
 
 def move_to_grab_next_tube():
     clock.reset()
     clock.resume()
     TUBO_15 = False
-    while clock.time() < 1181:
+    while clock.time() < 1190:
         move_foward(100)
         if is_15_tube():
             TUBO_15 = True
@@ -55,7 +56,7 @@ def move_to_grab_next_tube():
             move_left(120)
             move_distance_back(30)
             return "tubo_15"
-    move_distance_foward(-20)
+    move_distance_back(30)
     move_left(85) # 90
     move_distance_foward(85)  
     close_grab()
@@ -67,18 +68,17 @@ def move_to_grab_next_tube():
 def found_place(tubo):
     moved = False
     index = 0
+    print('Pegou o tubo de: ', tubo)
     if tubo == "tubo_15":
         while index < len(dic15_keys) and not moved:
             place = dic15_keys[index]
             if not dic15[place]:
-                
                 moved = True
                 dic15[place] = True
                 leave_tube(place)
                 print(place)
                 return_tube_area(place)
             index +=1
-            
     if tubo == "tubo_10":
         while index < len(dic10_keys) and not moved:
             place = dic10_keys[index]
@@ -113,9 +113,13 @@ def leave_tube(place):
     elif place == "Escola":
         move_right(80)
         move_distance_foward(42)
-        while not is_red_left():
+        while not is_red():
             if is_red_right():
-                move_distance_foward(110)
+                stop()
+                wait(1000)
+                if is_red():
+                    break
+                move_distance_foward(100)
             follow_line()
         move_distance_foward(60)
         move_right(90)
