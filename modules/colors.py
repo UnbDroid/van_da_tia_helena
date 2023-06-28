@@ -105,7 +105,7 @@ def is_red_right():
 
 
 
-red_range_left_min = [50, 5, 5]
+red_range_left_min = [40, 5, 5]
 red_range_left_max = [68, 17, 17]
 
 

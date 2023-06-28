@@ -69,16 +69,16 @@ def return_tube_area(place):
 def lanchonete_to_tube_area():
     if(is_red_left()):
         move_distance_foward(80)
-        move_left(90)
+        move_left(100)
         move_distance_foward(30) 
 
 def escola_to_tube_area():
     print('Escola indo pra area tube: ', count["Tube"])
-    if(is_red_right() and count["Movie"] == 1 and count["Tube"] == 1):
+    if(is_red_right()):
         move_distance_foward(120)
     while not is_red_right():
         follow_line()
-    if(is_red_right()): #3
+    if(is_red_right()):
         move_distance_foward(80)
         move_right(90)
         move_distance_foward(30)

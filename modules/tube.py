@@ -10,56 +10,93 @@ clock = StopWatch()
 
 ev3 = EV3Brick()
 
+global tubo
+
+global tubeCount
+
+global tube15_final
+
+tube15_final = 0
+tubeCount = 0
+
 def fetch_tube_area():
+    global tubo, tubeCount
     if(is_blue()):
         stop()
         move_distance_back(23)
         move_right(100)
         grabbed = False
         move_distance_back(110)
-        while not is_black_right():
-            move_foward(20)
-            adjust_blue()
-            if is_15_tube():
-            # Count tubo 15
-                stop()
-                ev3.speaker.beep(300)
-                tubo = "tubo_15"
-                grabbed = move_to_grab_tube()
-                break
+        if(tubeCount == 4 and tube15_final != 4):
+            grabbed = move_to_grab_final_10()
+        elif(tube15_final == 4):
+            while not is_black_right():
+                move_foward(80)
+            grabbed = move_to_grab_next_tube()
+        else: 
+            grabbed = move_to_grab_tube()
         if(not grabbed):
             tubo = move_to_grab_next_tube()
         found_place(tubo)
 
-def move_to_grab_tube():
-    move_left(90)
-    move_distance_foward(90)
+def move_to_grab_final_10():
+    global tubo
+    move_distance_foward(50)
+    move_left(85) # 90
+    move_distance_foward(90)  
     close_grab()
+    tubo = "tubo_10"
     move_distance_back(30)
     move_right(120)
     move_distance_back(30)
-    # move_distance_foward(40)
     return True
 
-def move_to_grab_next_tube():
+
+def move_to_grab_tube():
+    global tubo, tubeCount, tube15_final
+
     clock.reset()
     clock.resume()
     TUBO_15 = False
-    while clock.time() < 1190:
+    while clock.time() < 1200:
+        move_foward(80)
+        if is_15_tube():
+            tubo = "tubo_15"
+            ev3.speaker.beep(300)
+            move_left(97)
+            move_distance_foward(85)  
+            close_grab()
+            tubeCount += 1
+            tube15_final += 1
+            move_distance_back(30)
+            move_right(120)
+            move_distance_back(30)
+            return True
+
+def move_to_grab_next_tube():
+    global tubeCount, tube15_final
+
+    clock.reset()
+    clock.resume()
+    TUBO_15 = False
+    while clock.time() < 1180:
         move_foward(100)
         if is_15_tube():
             TUBO_15 = True
             move_left(97)
-            move_distance_foward(85)  
+            move_distance_foward(90)  
             close_grab()
+            tubeCount += 1
+            tube15_final += 1
             move_distance_back(30)
             move_left(120)
             move_distance_back(30)
             return "tubo_15"
-    move_distance_back(30)
+    move_distance_back(70)
     move_left(85) # 90
-    move_distance_foward(85)  
+    move_distance_foward(90)  
     close_grab()
+    tubeCount += 1
     move_distance_back(30)
     move_left(120)
     move_distance_back(30)  
@@ -69,6 +106,8 @@ def found_place(tubo):
     moved = False
     index = 0
     print('Pegou o tubo de: ', tubo)
+    zero_dic15()
+    zero_dic10()
     if tubo == "tubo_15":
         while index < len(dic15_keys) and not moved:
             place = dic15_keys[index]
@@ -116,8 +155,8 @@ def leave_tube(place):
         while not is_red():
             if is_red_right():
                 stop()
-                wait(1000)
-                if is_red():
+                wait(500)
+                if is_red() or is_black_left():
                     break
                 move_distance_foward(100)
             follow_line()
@@ -139,3 +178,15 @@ def leave_tube(place):
         open_grab()
         print("SOLTOU")
         
+
+def zero_dic15():
+    if(dic15["Lanchonete"] and dic15["Cinema"] and dic15["Escola"]):
+        dic15["Lanchonete"] = False
+        dic15["Cinema"] = False
+        dic15["Escola"] = False
+
+def zero_dic10():
+    if(dic10["Lanchonete"] and dic10["Cinema"] and dic10["Escola"]):
+        dic10["Lanchonete"] = False
+        dic10["Cinema"] = False
+        dic10["Escola"] = False
