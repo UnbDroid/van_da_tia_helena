@@ -12,27 +12,32 @@ ev3 = EV3Brick()
 
 global tubo
 
-global tubeCount
+global tube_count
 
-global tube15_final
+global tube15_position_initial
 
-tube15_final = 0
-tubeCount = 0
+global tube15_position_final
+
+tube15_position_initial = 0
+tube_count = 0
+tube15_position_final = 0
 
 def fetch_tube_area():
-    global tubo, tubeCount
+    global tubo, tube_count
     if(is_blue()):
         stop()
         move_distance_back(23)
         move_right(100)
         grabbed = False
         move_distance_back(110)
-        if(tubeCount == 4 and tube15_final != 4):
+        if(tube_count == 4 and tube15_position_initial != 4 and tube15_position_final != 4):
             grabbed = move_to_grab_final_10()
-        elif(tube15_final == 4):
+        elif(tube15_position_initial == 4):
             while not is_black_right():
                 move_foward(80)
             grabbed = move_to_grab_next_tube()
+        elif(tube15_position_final == 4):
+            grabbed = move_to_grab_final_10()
         else: 
             grabbed = move_to_grab_tube()
         if(not grabbed):
@@ -53,7 +58,7 @@ def move_to_grab_final_10():
 
 
 def move_to_grab_tube():
-    global tubo, tubeCount, tube15_final
+    global tubo, tube_count, tube15_position_initial
 
     clock.reset()
     clock.resume()
@@ -66,15 +71,15 @@ def move_to_grab_tube():
             move_left(97)
             move_distance_foward(85)  
             close_grab()
-            tubeCount += 1
-            tube15_final += 1
+            tube_count += 1
+            tube15_position_initial += 1
             move_distance_back(30)
             move_right(120)
             move_distance_back(30)
             return True
 
 def move_to_grab_next_tube():
-    global tubeCount, tube15_final
+    global tube_count, tube15_position_initial
 
     clock.reset()
     clock.resume()
@@ -86,8 +91,8 @@ def move_to_grab_next_tube():
             move_left(97)
             move_distance_foward(90)  
             close_grab()
-            tubeCount += 1
-            tube15_final += 1
+            tube_count += 1
+            tube15_position_final += 1
             move_distance_back(30)
             move_left(120)
             move_distance_back(30)
@@ -96,7 +101,7 @@ def move_to_grab_next_tube():
     move_left(85) # 90
     move_distance_foward(90)  
     close_grab()
-    tubeCount += 1
+    tube_count += 1
     move_distance_back(30)
     move_left(120)
     move_distance_back(30)  
