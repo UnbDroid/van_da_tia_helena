@@ -27,7 +27,7 @@ def fetch_tube_area():
     if(is_blue()):
         stop()
         move_distance_back(23)
-        move_right(100)
+        move_right(90)
         grabbed = False
         move_distance_back(110)
         if(tube_count == 4 and tube15_position_initial != 4 and tube15_position_final != 4):
@@ -48,7 +48,7 @@ def move_to_grab_final_10():
     global tubo
     move_distance_foward(50)
     move_left(85) # 90
-    move_distance_foward(90)  
+    move_distance_foward(110)  
     close_grab()
     tubo = "tubo_10"
     move_distance_back(30)
@@ -69,7 +69,7 @@ def move_to_grab_tube():
             tubo = "tubo_15"
             ev3.speaker.beep(300)
             move_left(97)
-            move_distance_foward(85)  
+            move_distance_foward(92)  
             close_grab()
             tube_count += 1
             tube15_position_initial += 1
@@ -157,13 +157,10 @@ def leave_tube(place):
     elif place == "Escola":
         move_right(80)
         move_distance_foward(42)
-        while not is_red():
-            if is_red_right():
-                stop()
-                wait(500)
-                if is_red() or is_black_left():
-                    break
-                move_distance_foward(100)
+        while not is_red_right():
+            follow_line()
+        move_distance_foward(123)
+        while not is_red_right():
             follow_line()
         move_distance_foward(60)
         move_right(90)

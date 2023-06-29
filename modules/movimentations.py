@@ -5,11 +5,11 @@ from modules.motors import *
 
 def follow_line():
     if(is_black_right()):
-        move_right(17) #20
+        move_right(18) #17
     elif(is_black_left()):
-        move_left(17)
+        move_left(18)
     else:
-        move_foward(80)
+        move_foward(115)
 
 def start():
     follow_line()
@@ -51,7 +51,7 @@ def return_tube_area(place):
         lanchonete_to_tube_area()
         
     if place == "Escola":
-        move_distance_back(150)
+        move_distance_back(165)
         move_left(90)
         move_distance_foward(120)
         while not is_red_right():
