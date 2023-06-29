@@ -23,7 +23,7 @@ tube_count = 0
 tube15_position_final = 0
 
 def fetch_tube_area():
-    global tubo, tube_count
+    global tubo, tube_count, tube15_position_initial, tube15_position_final
     if(is_blue()):
         stop()
         move_distance_back(23)
@@ -79,7 +79,7 @@ def move_to_grab_tube():
             return True
 
 def move_to_grab_next_tube():
-    global tube_count, tube15_position_initial
+    global tube_count, tube15_position_final
 
     clock.reset()
     clock.resume()
