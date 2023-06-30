@@ -86,7 +86,7 @@ def escola_to_tube_area():
 def cinema_to_tube_area():
     print('Cinema indo pra area tube: ', count["Tube"])
     if(is_red_right()):
-        move_distance_foward(80)
+        move_distance_foward(85) #80
         move_right(90)
         move_distance_foward(30)
         

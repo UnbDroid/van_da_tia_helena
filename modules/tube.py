@@ -97,9 +97,9 @@ def move_to_grab_next_tube():
             move_left(120)
             move_distance_back(30)
             return "tubo_15"
-    move_distance_back(70)
+    move_distance_back(52) #60
     move_left(85) # 90
-    move_distance_foward(90)  
+    move_distance_foward(96)  
     close_grab()
     tube_count += 1
     move_distance_back(30)
