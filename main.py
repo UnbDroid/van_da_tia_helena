@@ -50,7 +50,7 @@ while True:
    find_first_tube()
    fetch_tube_area()
 
-   # print("rgb left", get_sensor_color_left(), "rgb right", get_sensor_color_right())
+# print("rgb left", get_sensor_color_left(), "rgb right", get_sensor_color_right())
 # while True:
 #    move_right(360)
 #    wait(3000)  
