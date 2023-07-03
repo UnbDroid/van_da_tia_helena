@@ -2,13 +2,13 @@ from modules.movimentations import *
 from modules.constants import *
 from modules.grab import *
 from modules.ultrasonic import *
-from pybricks.hubs import EV3Brick
+
 
 from pybricks.tools import wait, StopWatch
 
 clock = StopWatch()
 
-ev3 = EV3Brick()
+
 
 global tubo
 
