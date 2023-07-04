@@ -4,8 +4,4 @@ dic10 = {'Lanchonete': False, 'Escola': False, 'Cinema': False}
 dic10_keys = ["Cinema", "Escola", "Lanchonete"]
 
 
-count = {}
-count["School"] = 0
-count["Movie"] = 0
-count["Lanchonete"] = 0
-count["Tube"] = 0
+count = {"School": 0, "Movie": 0, "Lanchonete": 0, "Tube" :0}

@@ -1,6 +1,6 @@
 from pybricks.hubs import EV3Brick
 ev3 = EV3Brick()
-ev3.speaker.set_speech_options('pt-br',f1)
+ev3.speaker.set_speech_options('pt-br',"f1")
 def beep(freq,durantion=100):
     ev3.speaker.beep(freq,duration)
 

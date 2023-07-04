@@ -1,12 +1,28 @@
+from modules.constants import *
 try:
-    data = open("data.txt","r+")
+    data = open("data.txt", "r+")
 except:
-    data = open("data.txt","x")
+    data = open("data.txt", "x")
+    data = open("data.txt", "r+")
+
 
 def save_data():
-    save = "dic15 =" + dic15 "," + "dic10 =" dic10 + "," + "count =" + count
+    save = str(dic15) + "," +  str(dic10) + ","  + str(count)
     data.write(save)
 
-def load_data():
-    pass
 
+def load_data():
+    global dic15, dic10, count
+    data = open("data.txt", "r+")
+    line = data.readline()
+    line = line.split(",")
+    dic15 = line[0]
+    dic10 = line[1]
+    count = line[2]
+
+    
+def reset():
+    global dic15, dic10, count
+    dic10 = {'Lanchonete': False, 'Escola': False, 'Cinema': False}
+    dic15 = {'Lanchonete': False, 'Escola': False, 'Cinema': False}
+    count = {"School": 0, "Movie": 0, "Lanchonete": 0, "Tube" :0}

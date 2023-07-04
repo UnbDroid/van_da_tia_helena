@@ -3,6 +3,8 @@ from modules.movimentations import *
 from modules.tube import *
 from modules.constants import *
 from pybricks.tools import wait, StopWatch
+from modules.data import *
+from modules.beep import *
 
 # sensor15 = UltrasonicSensor(Port.S1)
 # sensor10 = UltrasonicSensor(Port.S4)
@@ -49,6 +51,11 @@ while True:
    start()
    find_first_tube()
    fetch_tube_area()
+
+
+# success_15()
+
+# beep_success()
 
 # print("rgb left", get_sensor_color_left(), "rgb right", get_sensor_color_right())
 # while True:
