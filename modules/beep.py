@@ -1,7 +1,7 @@
-from pybricks.hubs import EV3Brick
+from pybricks.hubs import *
 ev3 = EV3Brick()
 ev3.speaker.set_speech_options('pt-br',"f1")
-def beep(freq,durantion=100):
+def beep(freq,duration=100):
     ev3.speaker.beep(freq,duration)
 
 
@@ -13,12 +13,12 @@ def beep_success():
     # speaker.play_file("mariowin.mp3") ###############
 
 
-def catch_15():
+def sound_catch_15():
     beep(800,500)
     beep(000,500)
     beep(800,500)
 
-def catch_10():
+def sound_catch_10():
     beep(300, 500)
     
 def success_15():

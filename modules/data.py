@@ -1,4 +1,5 @@
 from modules.constants import *
+from pybricks.tools import wait, StopWatch
 try:
     data = open("data.txt", "r+")
 except:
@@ -23,6 +24,8 @@ def load_data():
     
 def reset():
     global dic15, dic10, count
+    print("reseted")
     dic10 = {'Lanchonete': False, 'Escola': False, 'Cinema': False}
     dic15 = {'Lanchonete': False, 'Escola': False, 'Cinema': False}
     count = {"School": 0, "Movie": 0, "Lanchonete": 0, "Tube" :0}
+    wait(2000)

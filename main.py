@@ -51,11 +51,18 @@ while True:
    start()
    find_first_tube()
    fetch_tube_area()
+   # print(ev3.buttons.pressed())
+   if len(ev3.buttons.pressed()) > 0:
+      reset()
 
 
 # success_15()
 
 # beep_success()
+
+sound_catch_10()
+wait(2000)
+sound_catch_15()
 
 # print("rgb left", get_sensor_color_left(), "rgb right", get_sensor_color_right())
 # while True:
