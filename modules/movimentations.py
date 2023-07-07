@@ -3,14 +3,13 @@ from modules.constants import *
 from modules.motors import *
 
 
-def follow_line():
+def follow_line(speed = 152):
     if(is_black_right()):
         move_right(18) #17
     elif(is_black_left()):
         move_left(18)
     else:
-        move_foward(115)
-
+        move_foward(speed)
 def start():
     follow_line()
     if(is_red()):
@@ -31,6 +30,8 @@ def first_pass_in_tube_area():
         move_right(90)
         move_distance_foward(30)
         count["Tube"] += 1
+        while not is_blue():
+            follow_line(100)
 
 def find_first_tube():
     first_pass_in_movie()
@@ -46,14 +47,15 @@ def return_tube_area(place):
     if place  == "Lanchonete":
         move_distance_back(160)
         move_right(100)
+        move_distance_foward(60)
         while not is_red_left():
             follow_line()
         lanchonete_to_tube_area()
         
     if place == "Escola":
-        move_distance_back(165)
-        move_left(90)
-        move_distance_foward(120)
+        move_distance_back(160)
+        move_left(100)
+        move_distance_foward(60)
         while not is_red_right():
             follow_line()
         escola_to_tube_area()
@@ -61,7 +63,7 @@ def return_tube_area(place):
     if place == "Cinema":
         move_distance_back(160)
         move_left(100)
-        move_distance_foward(115)
+        move_distance_foward(60)
         while not is_red_right():
             follow_line()
         cinema_to_tube_area()
@@ -75,7 +77,7 @@ def lanchonete_to_tube_area():
 def escola_to_tube_area():
     print('Escola indo pra area tube: ', count["Tube"])
     if(is_red_right()):
-        move_distance_foward(120)
+        move_distance_foward(118)
     while not is_red_right():
         follow_line()
     if(is_red_right()):

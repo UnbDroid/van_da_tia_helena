@@ -5,11 +5,11 @@ import time
 grab = Motor(Port.C)
 
 def close_grab():
-    grab.run_time(-300, 4590)
+    grab.run_time(-310, 4590)
     grab.hold()
 
 
 def open_grab():
-    grab.run(300) #Testar essa função depois
+    grab.run(310) #Testar essa função depois
     time.sleep(4.5)#ver se conseguimos passar parametro que de um tempo relacionado ao tempo de fechamento ou se tempo constante é melhor
     grab.hold()

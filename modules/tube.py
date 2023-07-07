@@ -3,6 +3,7 @@ from modules.constants import *
 from modules.grab import *
 from modules.ultrasonic import *
 from pybricks.hubs import EV3Brick
+from modules.beep import *
 
 from pybricks.tools import wait, StopWatch
 
@@ -48,10 +49,10 @@ def move_to_grab_final_10():
     global tubo
     move_distance_foward(50)
     
-    ev3.speaker.beep(300)
     move_left(85) # 90
     move_distance_foward(110)  
     close_grab()
+    sound_catch_10()
     tubo = "tubo_10"
     move_distance_back(30)
     move_right(120)
@@ -69,10 +70,10 @@ def move_to_grab_tube():
         move_foward(80)
         if is_15_tube():
             tubo = "tubo_15"
-            ev3.speaker.beep(800)
             move_left(97)
             move_distance_foward(92)  
             close_grab()
+            sound_catch_15()
             tube_count += 1
             tube15_position_initial += 1
             move_distance_back(30)
@@ -90,11 +91,11 @@ def move_to_grab_next_tube():
         move_foward(100)
         if is_15_tube():
             
-            ev3.speaker.beep(800)
             TUBO_15 = True
             move_left(97,)#97 
             move_distance_foward(90)  
             close_grab()
+            sound_catch_15()
             tube_count += 1
             tube15_position_final += 1
             move_distance_back(30)
@@ -102,11 +103,11 @@ def move_to_grab_next_tube():
             move_distance_back(30)
             return "tubo_15"
         
-    ev3.speaker.beep(300)
-    move_distance_back(52) #60
+    move_distance_back(50) #60
     move_left(85) # 90
-    move_distance_foward(96)  
+    move_distance_foward(90)  
     close_grab()
+    sound_catch_10()
     tube_count += 1
     move_distance_back(30)
     move_left(120)
@@ -158,7 +159,7 @@ def leave_tube(place):
         move_distance_foward(60)
         move_right(90)
         move_distance_foward(150)
-        ev3.speaker.beep(100)
+        beep(200, 500)
         open_grab()
         print("SOLTOU")
         
@@ -174,7 +175,7 @@ def leave_tube(place):
         move_distance_foward(60)
         move_right(90)
         move_distance_foward(170)
-        ev3.speaker.beep(100)
+        beep(200, 500)
         open_grab()
         print("SOLTOU")
         
@@ -188,7 +189,7 @@ def leave_tube(place):
         move_distance_foward(60)
         move_left(90)
         move_distance_foward(170)
-        ev3.speaker.beep(100)
+        beep(200, 500)
         open_grab()
         print("SOLTOU")
         

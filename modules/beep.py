@@ -32,3 +32,6 @@ def success_15():
 
 def success_10():
     talk('larguei um passageiro de 10 cm')
+    
+def leave_passanger():
+    talk('beep')

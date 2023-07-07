@@ -7,7 +7,7 @@ motorLeft = Motor(Port.A)
 motorRight = Motor(Port.B)
 
 motors = DriveBase(motorLeft, motorRight, wheel_diameter= 41, axle_track=108.2)
-motors.settings(100, 270, 150) #velocidade_reto / aceleração reto / velocidade de giro / aceleração de giro
+motors.settings(150, 270, 250) #velocidade_reto / aceleração reto / velocidade de giro / aceleração de giro
 
 
 def move_foward(velocidade):

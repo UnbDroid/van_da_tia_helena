@@ -3,6 +3,7 @@ from modules.movimentations import *
 from modules.tube import *
 from modules.constants import *
 from pybricks.tools import wait, StopWatch
+from modules.data import *
 
 # sensor15 = UltrasonicSensor(Port.S1)
 # sensor10 = UltrasonicSensor(Port.S4)
@@ -45,13 +46,18 @@ from pybricks.tools import wait, StopWatch
 #     motor.hold()
 
 
+
 while True:
    start()
    find_first_tube()
    fetch_tube_area()
    # print(ev3.buttons.pressed())
    if len(ev3.buttons.pressed()) > 0:
+      while len(ev3.buttons.pressed()):
+         pass
       reset()
+
+
 
 # print("rgb left", get_sensor_color_left(), "rgb right", get_sensor_color_right())
 # while True:
